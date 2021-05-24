@@ -8,29 +8,29 @@ no padrão n+1, ou seja, quando fazemos 1 (caso paragem do d) + 1 dá 2 que corr
 Aqui estamos a somar 1 porque estamos no padrão n+1 porque é como se tivessemos a somar começando no 1 (sem ser no caso de paragem),
 ou seja, 0+1 fica 1 por isso corresponde a 1 + numei.
 -}
-di 0 = 2
-di (n + 1) = 1 + di n
+denominator_incrementer 0 = 2
+denominator_incrementer (n + 1) = 1 + denominator_incrementer n
 
 
 -- Denominador
-d 0 = 1
-d (n + 1) = di n * d n
+denominator 0 = 1
+denominator (n + 1) = denominator_incrementer n * denominator n
 
 {- Incrementa os numeradores sucessivos. O caso de paragem do nume é 1 e o caso de paragem desta função dá 3 porque estamos a trabalhar
 no padrão n+1, ou seja, quando fazemos 1 (caso paragem do nume) + (1+1) dá 3 que corresponde ao caso de paragem do numei.
 Aqui estamos a somar 2 porque estamos no padrão n+1 porque é como se tivessemos a somar começando no 1 (sem ser no caso de paragem),
 ou seja, 1+1 fica 2 por isso corresponde a 2 + numei.
 -}
-numei 0 = 3
-numei (n + 1) = 2 + numei n
+numerator_incrementer 0 = 3
+numerator_incrementer (n + 1) = 2 + numerator_incrementer n
 
 -- Numerador
-nume 0 = 1
-nume (n + 1) = numei n * nume n 
+numerator 0 = 1
+numerator (n + 1) = numerator_incrementer n * numerator n 
 
 -- Fração que corresponde ao quociente entre o numerador e o denominador
-t 0 = 1
-t n = nume n / d n 
+quotient 0 = 1
+quotient n = numerator n / denominator n 
 
 {- Na primeira componente temos o quociente entre o numero e o denominador. 
 Na segunda compoente temos o produto do numerador pelo seu numerador sucessivo + 1 pelo numerador sucessivo para obter o numerador pretendido.
@@ -39,7 +39,7 @@ numerador pretendido.
 A quarta componente corresponde à função numei para incrementar os numeradores sucessivos.
 A quinta componente corresponde à função a para incrementar os denominadores sucessivos.
 -}
-loop (t , nume , d , numei , di) = (div nume d , nume * (numei + 1) * numei , d * (di + 1) * di , numei + 2 , di + 1)  
+loop (quotient , numerator , denominator , numerator_incrementer , denominator_incrementer) = (div numerador denominator , numerator * (numerator_incrementer + 1) * numerator_incrementer , denominator * (denominator_incrementer + 1) * denominator_incrementer , numerator_incrementer + 2 , denominator_incrementer + 1)  
 
 -- Valores dos casos de paragem de cada uma das funções
 inic = (1 , 1 , 1 , 3 , 2)
