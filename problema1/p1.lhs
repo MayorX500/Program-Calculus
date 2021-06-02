@@ -4,17 +4,10 @@ Definir outExpAr
 
 -- definir outExpAr
 
+outExpAr X = i1 ()
 outExpAr (N a) = i2 . i1 $ a
 outExpAr (Bin op a b) = i2 . i2 . i1 $ (op, (a, b))
 outExpAr (Un op a) = i2 . i2 . i2 $ (op, a)
-
--- Estou empancado por causa de
-
----outExpAr :: ExpAr a -> Either () (Either a (Either (BinOp, (ExpAr a, ExpAr a)) (UnOp, ExpAr a)))
----Non-exhaustive patterns in function outExpAR
--- X
----Non-exhaustive patterns in function outExpAr
--- Left ()
 
 \end{code}
 Definir recExpAr
@@ -38,6 +31,8 @@ g_eval_exp a = undefined
 
 Definir clean
 \begin{code}
+clean = undefined
+-- capaz de ter que utilizar mesmo método de i1 () que outExpAr usa para tratar de X.
 
 \end{code}
 
