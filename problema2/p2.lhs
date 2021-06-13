@@ -1,7 +1,4 @@
 \subsection*{Problema 2}
-Definir
-
-
 
 Incrementa os denominaodes. O caso de paragem do d é 1 e o caso de paragem desta função dá 2 porque estamos a trabalhar
 no padrão n+1, ou seja, quando fazemos 1 (caso paragem do d) + 1 dá 2 que corresponde ao caso de paragem do di.
