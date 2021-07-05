@@ -1,4 +1,5 @@
 # Program Calculus Project
+Solution of problems through a functional language.
 
 ## Authors
 * [Alexandre Flores](https://github.com/SugaryLump)
