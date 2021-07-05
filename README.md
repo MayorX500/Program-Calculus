@@ -1,6 +1,6 @@
 # Program Calculus Project
 
-Solution of problems through a functional language
+Solution of problems through a functional language, namely Haskell and F#
 
 ## Authors
 * [Alexandre Flores](https://github.com/SugaryLump)
